@@ -4,27 +4,21 @@ class Solution {
         int count =0;
         StringBuilder result = new StringBuilder();
         for(int i =0;i<n;i++){
-            char ch=s.charAt(i);
-            if(ch=='('){
-                if(count  > 0){
-                    result.append('(');
-
-
-                }
-                count++;
-
+         char ch = s.charAt(i);
+         if(ch =='('){
+            if(count > 0){
+                result.append(s.charAt(i));
             }
-            else {
-                count--;
-                if(count>0){
-                    result.append(')');
-
-                }
-                
+            count++;
+         }
+         if(ch ==')'){
+            count--;
+            if(count > 0){
+                result.append(s.charAt(i));
             }
            
-        }
-         return result.toString();
+         }
+        }return result.toString();
 
         
     }
