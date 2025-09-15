@@ -14,19 +14,21 @@
  * }
  */
 class Solution {
-      ArrayList<Integer> answer;
-        public void recur(TreeNode root){
-            if(root==null){
-                return;
-            }
-            recur(root.left);
-            answer.add(root.val);
-            recur(root.right);
+    ArrayList<Integer>answer ;
+
+    public void recur(TreeNode root){
+        if(root== null){
+            return;
         }
+        recur(root.left);
+        answer.add(root.val);
+        recur(root.right);
+
+    }
     public List<Integer> inorderTraversal(TreeNode root) {
-      answer=new ArrayList<>();
-      recur(root);
-      return answer;
+        answer = new ArrayList<>();
+        recur(root);
+        return answer;
         
     }
 }
