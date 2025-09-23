@@ -4,24 +4,28 @@ class Solution {
             return "1";
 
         }
-        String prev = countAndSay(n-1);
-        StringBuilder sb = new StringBuilder();
-
-        char prevChar= prev.charAt(0);
         int count =1;
-        for(int i =1;i<prev.length();i++){
-            char c= prev.charAt(i);
-            if(c==prevChar){
-                count++;
+        String pre= countAndSay(n-1);
+        char prevous = pre.charAt(0);
+        StringBuilder result = new StringBuilder();
+        for(int i =1;i<pre.length();i++){
+            char ch = pre.charAt(i);
+            if(ch == prevous){
+                count ++;
             }
             else {
-                sb.append(count).append(prevChar);
-                count =1;
-                prevChar=c;
+                result.append(count).append(prevous);
+                count=1;
+                prevous = ch;
+
 
             }
-        }  
-         sb.append(count).append(prevChar);
-         return sb.toString();  
+
+
+        }
+        result.append(count).append(prevous);
+        return result.toString();
+
+        
     }
 }
